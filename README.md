@@ -1,12 +1,12 @@
 # 稿定编辑器 SDK 接入说明
-稿定编辑器 `SDK` 是对稿定能力的封装，以实现对设计服务的无缝对接，目前支持以下服务：
+稿定编辑器 SDK 是对稿定能力的封装，以实现对设计服务的无缝对接，目前支持以下服务：
 
 - [x] 平面编辑器
 - [x] 图片编辑器
 - [ ] TODO: H5编辑器
 - [ ] TODO: 打通用户登录, 请联系定制
 
-Npm 包参见：[@gaoding/editor-sdk](https://www.npmjs.com/package/@gaoding/editor-sdk)
+NPM 包参见：[@gaoding/editor-sdk](https://www.npmjs.com/package/@gaoding/editor-sdk)
 
 ### 平面编辑器
 1. 海量创意模板快速生成
@@ -41,13 +41,16 @@ yarn add @gaoding/editor-sdk
 ```javascript
 import { GdEditorSdk } from '@gaoding/editor-sdk';
 
-const sdk = new GdEditorSdk({
+const gdEditorSDK = new GdEditorSdk({
     // 区分编辑器类型 (图片编辑器、平面编辑器、H5编辑器)
     appId: '由SDK方提供',
-    // onUpload 执行后，是否自动关闭弹窗，默认为 true
-    autoClose: true;
+    // onCompleted 执行后，是否自动关闭弹窗，默认为 true
+    autoClose: true,
+    // 完成按钮文案默认“完成”
+    buttonText: '完成',
+    
     // 完成编辑器下载时触发
-    onUpload(blob) {
+    onCompleted({ blob, workId, sourceId }) {
         // 直接展示
         const url = window.URL.createObjectURL(blob);
         const img = document.createElement('img');
@@ -67,10 +70,10 @@ const sdk = new GdEditorSdk({
     },
     // 自定义iFrame样式
     style: {}
-})
+});
 
 // 打开弹窗
-sdk.open({
+gdEditorSDK.open({
     ext: {
         // 指定海报模板类目(图片、简历、GIF、LOGO、海报、表情头像、文章配图、适配封面。。。)
         // ps: 使用场景为平面编辑器, 分类 ID 由 SDK方提供
@@ -81,5 +84,5 @@ sdk.open({
     }
 });
 // 关闭弹窗
-sdk.close();
+gdEditorSDK.close();
 ```
