@@ -79,8 +79,8 @@ gdEditorSDK.open({
         // ps: 使用场景为平面编辑器, 分类 ID 由 SDK方提供
         third_cate_id: '',
         // 指定编辑器底图
-        // ps: 使用场景为图片编辑器，需开放 CORS 跨域能力
-        image: 'https://st-gdx.dancf.com/materials/115030/shots/20190830-155521-WWU47.png'
+        // ps: 使用场景为图片编辑器，需开启 CORS 跨域访问，稿定域名为 *.gaoding.com
+        url: 'https://st-gdx.dancf.com/materials/115030/shots/20190830-155521-WWU47.png'
     }
 });
 // 关闭弹窗
