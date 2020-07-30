@@ -18,7 +18,8 @@ NPM 包参见：[@gaoding/editor-sdk](https://www.npmjs.com/package/@gaoding/edi
 - [x] 2. 图片增强、图片滤镜效果
 - [x] 3. 图片添加水印、添加相框、添加文字
 - [x] 4. 海量创意素材（文字、贴纸、边框、水印...）
-- [ ] 5. 马赛克、涂鸦
+- [x] 5. 马赛克、涂鸦
+- [ ] 6. 批量编辑
 
 ##
 
@@ -77,7 +78,7 @@ gdEditorSDK.open({
     ext: {
         // 指定海报模板类目(图片、简历、GIF、LOGO、海报、表情头像、文章配图、适配封面。。。)
         // ps: 使用场景为平面编辑器, 分类 ID 由 SDK方提供
-        third_cate_id: '',
+        // third_cate_id: '',
         // 指定编辑器底图
         // ps: 使用场景为图片编辑器，需开启 CORS 跨域访问，稿定域名为 *.gaoding.com
         url: 'https://st-gdx.dancf.com/materials/115030/shots/20190830-155521-WWU47.png'
