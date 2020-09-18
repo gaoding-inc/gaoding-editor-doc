@@ -19,7 +19,7 @@ NPM 包参见：[@gaoding/editor-sdk](https://www.npmjs.com/package/@gaoding/edi
 - [x] 3. 图片添加水印、添加相框、添加文字
 - [x] 4. 海量创意素材（文字、贴纸、边框、水印...）
 - [x] 5. 马赛克、涂鸦
-- [ ] 6. 批量编辑
+- [x] 6. 批量编辑
 
 ##
 
@@ -39,7 +39,7 @@ yarn add @gaoding/editor-sdk
 ```
 
 ### cdn 使用方式
-```javascript
+```html
 <script src="./jquery.min.js"></script>
 <script src="https://cdn.dancf.com/editor-sdk@0.2.5/dist/gd-editor-sdk.min.js"></script>
 <script>
