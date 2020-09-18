@@ -38,6 +38,46 @@ npm i @gaoding/editor-sdk
 yarn add @gaoding/editor-sdk
 ```
 
+### cdn 使用方式
+```javascript
+<script src="./jquery.min.js"></script>
+<script src="https://cdn.dancf.com/editor-sdk@0.2.5/dist/gd-editor-sdk.min.js"></script>
+<script>
+    var gdEditor = new GdEditorSdk({
+        // 区分编辑器类型 (图片编辑器、平面编辑器、H5编辑器)
+        appId: '由SDK方提供',
+        // onCompleted 执行后，是否自动关闭弹窗，默认为 true
+        autoClose: true,
+        // 完成按钮文案默认“完成”
+        buttonText: '完成',
+
+        // 2.4.0 版本以上支持
+        onCompleted: function (params) {
+            // 上传的例子
+            const form = new FormData();
+            form.append('file', params.blob, 'gaoding.jpg');
+
+            $.ajax({
+                url: 'url',
+                type: 'post',
+                contentType: 'multipart/form-data',
+                data: form,
+                success: function (res) {
+                    alert("ok")
+                }
+            });
+        },
+
+        // 自定义iFrame样式
+        style: {}
+    });
+    gdEditor.open({
+        ext: {
+            third_cate_id: 356
+        }
+    });
+</script>
+```
 ### npm 使用方式
 ```javascript
 import { GdEditorSdk } from '@gaoding/editor-sdk';
