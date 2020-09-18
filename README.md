@@ -51,7 +51,7 @@ yarn add @gaoding/editor-sdk
         // 完成按钮文案默认“完成”
         buttonText: '完成',
 
-        // 2.4.0 版本以上支持
+        // 0.2.4 版本以上支持
         onCompleted: function (params) {
             // 上传的例子
             const form = new FormData();
